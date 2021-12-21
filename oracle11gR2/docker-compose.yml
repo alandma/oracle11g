@@ -1,0 +1,16 @@
+version: "3.7"
+services: 
+  
+  orcl11g:
+    build: 
+      context: .
+    shm_size: '1gb'
+    environment: 
+      ORACLE_PWD: System#1
+    volumes: 
+      - ora_data:/u01/app/oracle/oradata
+    ports: 
+      - "1521:1521"
+
+volumes: 
+  ora_data:
